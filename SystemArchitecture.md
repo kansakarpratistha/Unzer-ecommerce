@@ -1,1 +1,1 @@
-"# System Architecture" 
+# System Architecture
