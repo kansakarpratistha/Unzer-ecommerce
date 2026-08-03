@@ -9,6 +9,10 @@ The assumptions made for this design are as follows.
 * A single currency and single region are assumed for the initial version.
 * Card data is never exposed to the system's backend in raw form. The tokenized version is obtained from Unzer's UI components and this is sent to the sever.
 
+**Implementation Scope**
+
+This system architecture document describes the complete e-commerce platform, while the accompanying code slice implements a vertical code slice covering the checkout -> payment -> order creating using the Unzer integration. Other domains are described architecturally but are only minimally implemented.
+
 
 ## 2. System Decomposition
 For the initial design of the system, modular monolith is chosen since the initial product scope does not require independent deplooyment of every component which makes it simpler and consistency handling is rather easier in such architecture due to easier communication between modules. However, when the services expand and calls for a more larger scale, each module could be extracted as a microservice.
