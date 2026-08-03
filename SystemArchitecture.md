@@ -73,16 +73,16 @@ erDiagram
         Long category_id FK
         String name
         String description
-        Decimal unit_price
+        BigDecimal unit_price
+        String Currency
     }
 
     INVENTORY {
         Long product_id PK
-        Integer quantity_available
-        Integer quantity_reserved
+        Integer available_quantity
+        Integer reserved_quantity
         Timestamp created_at
-        Timestamp stock_updated_at
-        Timestamp deleted_at
+        Timestamp updated_at
     }
 
     CART {
@@ -104,25 +104,29 @@ erDiagram
         String guest_email
         Long shipping_address_id FK
         String status
+        BigDecimal total_amout
         Timestamp created_at
         Timestamp updated_at
     }
 
     ORDER_ITEM {
+        Long id PK
         Long order_id FK
         Long product_id FK
         Integer quantity
-        Decimal unit_price_at_sale
+        BigDecimal unit_price_at_sale,
+        String currency
     }
 
     PAYMENT_TRANSACTION {
-        Long payment_id PK
+        Long id PK
         Long order_id FK
         String payment_method
         String unzer_resource_id
         String unzer_transaction_id
-        String status
-        Decimal amount
+        String transaction_status
+        BigDecimal amount
+        String currency
         Timestamp created_at
     }
 
