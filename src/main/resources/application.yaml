@@ -4,7 +4,7 @@ spring:
     profiles:
         active: mock-payment
     unzer:
-        private-key: ""
+        private-key: ${UNZER_PRIVATE_KEY}
     h2:
         console:
             enabled: true
