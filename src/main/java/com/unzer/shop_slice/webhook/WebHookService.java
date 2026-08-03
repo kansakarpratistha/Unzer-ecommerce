@@ -57,9 +57,10 @@ public class WebHookService {
             for (OrderItems item : orderItems) {
                 inventoryRepository.commitReservation(item.getProductId(), item.getQuantity());
             }
+        } else if (event.isPending()) {
+            // order status still AWAITING_PAYMENT
         } else {
             order.setStatus(OrderStatus.PAYMENT_FAILED);
-            // Release reserved inventory
             for (OrderItems item : orderItems) {
                 inventoryRepository.releaseReservation(item.getProductId(), item.getQuantity());
             }

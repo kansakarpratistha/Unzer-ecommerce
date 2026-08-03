@@ -27,4 +27,8 @@ public class UnzerWebHookPayLoad {
     public boolean isSuccess(){
         return "SUCCESS".equalsIgnoreCase(status);
     }
+
+    public boolean isPending(){
+        return "PENDING".equalsIgnoreCase(status);
+    }
 }
